@@ -1,0 +1,16 @@
+{
+  "name": "vending-machine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose"
+  },
+  "keywords": [],
+  "author": "Kenneth Chow",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.11.0",
+    "jest-cli": "^21.2.1"
+  }
+}
