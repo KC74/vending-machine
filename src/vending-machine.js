@@ -133,10 +133,6 @@ class VendingMachine {
   printInventory() {
     return this.inventory;
   }
-
-  turnOff() {
-    this.power = false;
-  }
 }
 
 module.exports = VendingMachine;
