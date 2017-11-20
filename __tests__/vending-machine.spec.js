@@ -191,4 +191,11 @@ describe("Tests for dispensing change", () => {
       expect(start.giveChange(2.75, 7.49)).toEqual(result);
     });
   });
+
+  describe("When all inputs are valid and exact cash is given and there is stock", () => {
+    it("Should return the item requested", () => {
+      start.refillInventory("coke", 2.75, 5);
+      expect(start.dispense("coke", 2.75)).toBe("coke");
+    });
+  });
 });
