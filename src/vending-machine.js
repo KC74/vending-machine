@@ -91,9 +91,10 @@ class VendingMachine {
           Math.round(
             (changeNeeded - this.bank[coin].value * change[coin]) * 100
           ) / 100;
+
+        this.bank[coin].stock -= calculateCoin;
       }
     }
-
     return change;
   }
 
