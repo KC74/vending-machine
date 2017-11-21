@@ -139,15 +139,19 @@ describe("Dispensing Inventory tests", () => {
 
   describe("When all inputs are valid and exact cash is given and there is stock", () => {
     it("Should return the item requested", () => {
+      const item = {
+        price: 2.75,
+        stock: 4
+      };
       start.refillInventory("coke", 2.75, 5);
-      expect(start.dispense("coke", 2.75)).toBe("coke");
+      expect(start.dispense("coke", 2.75)).toEqual(item);
     });
   });
 });
 
 /**
  * 
- *  <------------- DISPENSING INVENTORY TESTS ------------->
+ *  <------------- DISPENSING CHANGE TESTS ------------->
  * 
  */
 describe("Tests for dispensing change", () => {
@@ -189,13 +193,6 @@ describe("Tests for dispensing change", () => {
       start.refillInventory("coke", 2.75, 5);
       start.resupplyChange("penny", 5);
       expect(start.giveChange(2.75, 7.49)).toEqual(result);
-    });
-  });
-
-  describe("When all inputs are valid and exact cash is given and there is stock", () => {
-    it("Should return the item requested", () => {
-      start.refillInventory("coke", 2.75, 5);
-      expect(start.dispense("coke", 2.75)).toBe("coke");
     });
   });
 });

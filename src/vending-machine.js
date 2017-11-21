@@ -121,12 +121,12 @@ class VendingMachine {
     if (cash === price) {
       // adjust stock
       this.inventory[item].stock--;
-      return item;
+      return this.inventory[item];
     } else if (cash > price) {
       this.inventory[item].stock--;
       // dispense change
       this.giveChange(price, cash);
-      return item;
+      return this.inventory[item];
     }
   }
 
